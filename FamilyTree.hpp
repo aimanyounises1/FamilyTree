@@ -16,8 +16,8 @@ namespace family
     {
     public:
         node *root;
-        Tree addFather(string, string);
-        Tree addMother(string, string);
+        Tree &addFather(string, string);
+        Tree &addMother(string, string);
         Tree(string);
         string find(string);
         string relation(string);

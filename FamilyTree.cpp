@@ -57,18 +57,19 @@ bool Tree::addm(string name, node *n, string y)
             n->right = nn;
             return true;
         }
+        // checks if true then do it
         if (this->addm(name, n->left, y))
         {
             this->addm(name, n->left, y);
             return true;
         }
-
+        // check the right one
         return this->addm(name, n->right, y);
     }
     return false;
 }
 
-Tree Tree::addFather(string x, string y)
+Tree& Tree::addFather(string x, string y)
 {
     if (this->root == NULL)
         throw runtime_error("tree is empty");
@@ -77,7 +78,7 @@ Tree Tree::addFather(string x, string y)
     this->addf(x, this->root, y);
     return *this;
 }
-Tree Tree::addMother(string x, string y)
+Tree& Tree::addMother(string x, string y)
 {
     if (this->root == NULL)
         throw runtime_error("tree is empty");
